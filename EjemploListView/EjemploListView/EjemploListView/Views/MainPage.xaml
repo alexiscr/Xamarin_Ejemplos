@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EjemploListView"
+             x:Class="EjemploListView.MainPage">
+
+    <StackLayout>
+        <!--Creación de ListView, el item source es enlazado con la colección observable creada en el view Model-->
+        <ListView ItemsSource="{Binding _listaPersona}">
+            <!--Definición de la plantilla para los items-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--La plantilla a dedinir es una ViewCell-->
+                    <ViewCell>
+                        <!--Los datos son agrupados en un stacklayout , tambien pueden ser colocados en un GRID-->
+                        <StackLayout Orientation="Horizontal">
+                            <!--Enlace al atributo Avatar de la clase Persona-->
+                            <Image Source="{Binding Avatar}" 
+                                   HeightRequest="25" WidthRequest="25"/>
+                            <!--Enlace al atributo Id de la clase Persona-->
+                            <Label Text="{Binding Id}"
+                                   VerticalOptions="Center"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <!--Enlace al atributo Nombre de la clase Persona-->
+                            <Label Text="{Binding Nombre}" 
+                                   VerticalOptions="Center"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
