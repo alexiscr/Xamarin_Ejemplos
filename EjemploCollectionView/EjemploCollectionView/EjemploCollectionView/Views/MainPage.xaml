@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjemploCollectionView.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="ListaPersona">
+                <CollectionView.ItemsLayout>
+                    <!--Definimos como se disttribuiran las columnas que se mostraran-->
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35" />
+                                <RowDefinition Height="35" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <!--La Imagen utilizara 2 filas para mostrarse-->
+                            <Image Grid.RowSpan="2"
+                                   Source="{Binding Avatar}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="60"
+                                   WidthRequest="60" />
+                            
+                            <!--Enlazamos los datos del Id-->
+                            <Label Grid.Column="1"
+                                   Text="{Binding Id}"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"/>
+                            
+                            <!--Enlazamos los datos del Nombre-->
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Nombre}"                                  
+                                   FontAttributes="Italic"                                   
+                                   VerticalOptions="Center" /> 
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
