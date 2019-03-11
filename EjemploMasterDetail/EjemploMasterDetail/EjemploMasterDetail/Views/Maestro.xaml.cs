@@ -40,7 +40,7 @@ namespace EjemploMasterDetail.Views
             {
                 /** Capturamos el valor que se ha seleccionado, para ello es necesario realizar un casting de datos
                  * ya que lo que se recibe es un object, primeramente lo debemos convertir a ListView y luego a string 
-                 * y asi poder obtner el valor del item seleccionado.
+                 * y asi poder obtner el valor del item seleccionado en la lista.
                  * **/
                 string _pagina = (string)((ListView)sender).SelectedItem ;
 
