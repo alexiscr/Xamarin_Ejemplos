@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EjemploMasterDetail.Views"
+             x:Class="EjemploMasterDetail.Views.Maestro">
+
+    <!--Definición del contenedor Maestro para el menu de opciones-->
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <ListView x:Name="ListaPaginas" ItemTapped="SeleccionPaginas"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <!--Definición del contenedor para las páginas detalles-->
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <!--Esta es la página por defecto se puede cambiar y colocar la que ustedes necesiten-->
+                <ContentPage Title="Detalle">
+                    <Label Text="Página por defecto"/>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
