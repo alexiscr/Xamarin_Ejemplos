@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EjemploToolbarItems"
+             x:Class="EjemploToolbarItems.MainPage">
+    <!--Establecemos el contenedor para Items-->
+    <!--NOTA IMPORTANTE: HABILITAR LA NAVEGACIÓN EN APP.XAML.CS-->
+    <ContentPage.ToolbarItems>
+        <!--Order Primary es para que se muestre en la barra de navegación, los text pueen ser cambiados por icons-->
+        <ToolbarItem Text="Clic" Order="Primary" Clicked="BotonHola"/>
+        <!--Order Secondary se mostrara en el menu oculto como un menu flotante-->
+        <ToolbarItem Text="Opción 1" Order="Secondary"/>
+        <ToolbarItem Text="Opción 2" Order="Secondary"/>
+        <ToolbarItem Text="Opción 3" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>
