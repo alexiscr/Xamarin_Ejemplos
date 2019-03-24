@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PruebaCamara"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="PruebaCamara.MainPage">
+
+    <StackLayout>
+        
+        <controls:CircleImage 
+            x:Name="PhotoImage" 
+            Aspect="AspectFill" 
+            Source="user.png"  
+            HorizontalOptions="Center" 
+            BorderColor="Black">
+        <controls:CircleImage.WidthRequest>
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="Android, iOS">150</On>
+            </OnPlatform>
+        </controls:CircleImage.WidthRequest>
+        <controls:CircleImage.HeightRequest>
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="Android, iOS">150</On>
+            </OnPlatform>
+        </controls:CircleImage.HeightRequest>
+        </controls:CircleImage>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Text="Nombre" Grid.Row="0" Grid.Column="0"/>
+            <Entry x:Name="txtNombre" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Apellido" Grid.Row="1" Grid.Column="0"/>
+            <Entry x:Name="txtApellido" Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Fecha Nacimiento" Grid.Row="2" Grid.Column="0"/>
+            <DatePicker x:Name="txtFecha" Grid.Row="2" Grid.Column="1"/>
+            <Label Text="Hora" Grid.Row="3" Grid.Column="0"/>
+            <TimePicker x:Name="txtHora" Grid.Row="3" Grid.Column="1"/>
+        </Grid>
+        
+        
+        <Button Text="Agregar Persona" x:Name="AddPersona" Clicked="AddPersona_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
