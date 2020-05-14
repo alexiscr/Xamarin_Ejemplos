@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EjemploNavegación"
+             x:Class="EjemploNavegación.MainPage"
+             Title="APP User Login"
+             BackgroundColor="Brown">
+
+    <StackLayout Margin="15,35,15,0">
+        <Image Source="avatar.png" 
+               HorizontalOptions="Center" 
+               WidthRequest="150"
+               HeightRequest="150"/>
+        
+        <Grid Margin="0,25,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="User:" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Entry Placeholder="Your User" Grid.Row="0" Grid.Column="1"
+                   BackgroundColor="White"
+                   PlaceholderColor="Gray"/>
+
+            <Label Text="Password:" Grid.Row="1" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"/>
+            <Entry Placeholder="Your Password" Grid.Row="1" Grid.Column="1"
+                    BackgroundColor="White"
+                   PlaceholderColor="Gray"
+                   IsPassword="True"/>
+            
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Remember in this device:" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="12"    
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"/>
+            <Switch Grid.Row="0" Grid.Column="1" OnColor="Green"/>
+        </Grid>
+        <Grid Margin="0,25,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Login"
+                    TextColor="White"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Clicked="LoginClick"
+                    BackgroundColor="Red"
+                    BorderRadius="15"/>
+            <Button Text="Cancel" 
+                    TextColor="White"                    
+                    BorderColor="White"
+                    BorderWidth="2"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="Red"
+                    BorderRadius="15"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

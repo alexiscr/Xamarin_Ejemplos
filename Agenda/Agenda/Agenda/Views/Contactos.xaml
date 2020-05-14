@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.Views.Contactos">
+    <!-- Toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="menuAgregar" 
+                     Order="Primary" 
+                     Text="Nuevo" 
+                     Priority="0" 
+                     Clicked="ItemMenuNuevo_Click"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <!-- Contenido -->
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10">
+            <Label 
+                Margin="5"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Text="Agenda FGK"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label
+                Text="La Agenda FGK Le permitira Administrar todos sus contactos de manera eficiente"
+                VerticalTextAlignment="Start"
+                HorizontalOptions="FillAndExpand"/>
+            <Label
+                Margin="10"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="Center"
+                Text="CONCTATOS"
+                FontSize="Medium"
+                FontAttributes="Bold"/>
+            <ListView
+                ItemsSource="{Binding ListContactos}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            Text="{Binding Nombre}"
+                            Detail="{Binding Apellido}"
+                            ImageSource="{Binding Imagen}"
+                            TextColor="Black"
+                            DetailColor="Gray"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

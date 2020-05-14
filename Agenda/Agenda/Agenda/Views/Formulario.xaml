@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.Views.Formulario">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10">
+            <Label Text="Registro de Contactos"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout
+               Margin="10">
+                <Label Text="Nombre:"/>
+                <Entry
+                    x:Name="txtNombre"
+                    Placeholder="Primer Nombre"/>
+                <Label Text="Apellido:"/>
+                <Entry 
+                    x:Name="txtApellido"
+                    Placeholder="Primer Apellido"/>
+                <Label Text="Contacto:"/>
+                <Entry 
+                       x:Name="txtTelefono"
+                       Keyboard="Telephone" 
+                       Placeholder="Numero Telefonico"/>
+                <Button 
+                    Text="Guardar"
+                    Clicked="btnAgregar_Click"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
